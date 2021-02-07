@@ -1,11 +1,11 @@
 ---
-title: "LAB 1"
+title:    "LAB 1"
 geometry: "left=3cm,right=3cm,top=1.5cm,bottom=1.5cm"
 output:
   pdf_document: default
   html_document:
-    df_print: paged
-urlcolor: blue 
+    df_print:   paged
+urlcolor:       blue 
 ---
 
 ```{r setup, include=FALSE}
