@@ -1,0 +1,68 @@
+---
+title: "LAB 1"
+geometry: "left=3cm,right=3cm,top=1.5cm,bottom=1.5cm"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+urlcolor: blue 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment=NA, fig.align='center', out.width='60%')
+```
+
+## Install Latex Distribution
+
+One of the goals of this lab is that you make sure you can create interactive document files (Rmd) and convert them to pdf, as well as html format.  In order to be able to write mathematical text, you would need LaTex, which RStudio uses to produce pdf files.
+
+Latex is a <em>free</em> typesetting system/software that for quite some time has been a standard for writing books, scientific articles, theses and other documments in mathematics, statistics, physics, computer science and other disciplines.
+
+If you've never used Latex on your machine, you will need some Latex distribution (MikTex, MacTex, TinyTex,...), which is a set of packages required for Latex. You can find various online tutorials how to install them. For example, I use BasicTeX from MacTex. 
+
+You can read instructions here: [https://www.latex-tutorial.com/installation/](https://www.latex-tutorial.com/installation/). Or else,
+
+$\bullet$ [for Windows](https://medium.com/@sorenlind/create-pdf-reports-using-r-r-markdown-latex-and-knitr-on-windows-10-952b0c48bfa9) \hspace{0.5cm}  $\bullet$ [for Mac](https://tug.org/mactex/) \hspace{0.5cm}
+$\bullet$ [for Linux/Ubuntu](https://miktex.org/howto/install-miktex-unx)
+
+After installing Latex, make sure you can create a pdf file using "Knit" button in RStudio. To do that, you need to create a new Rmarkdown file (`File --> New File --> R Markdown --> Document --> PDF`).
+
+The above sequence of clicks should produce an Rmd file, which you can see it open in your RStudio. It is a template with some content that helps you figure out how basics of RMarkdown work. Save this file in order to run it, by clicking on `save` button (you would need to choose a name of the file). To run the file, click on `Knit`. Since you chose to create PDF (rather than HTML or Word), it will automatically generate pdf file. 
+
+## Absenteeism at Work
+
+The file `Absenteeism_at_work.csv` is posted on Canvas, as well as the documentation about the data. This is taken from UC Irvine Machine Learning Repository archive [https://archive.ics.uci.edu/ml/datasets](https://archive.ics.uci.edu/ml/datasets/Absenteeism+at+work)
+
+### Instructions
+
+- Read the documentation to become familiar with the meanings of the  variables/columns.
+
+- Read in the data set using the command 
+```{r, eval=FALSE}
+df = read.csv("Absenteeism_at_work.csv",sep=";",header=TRUE)
+```
+
+- You will need to submit one PDF file, produced by your Rmd file. Include your code, plot and comments in your Rmarkdown file, so that they are shown in the pdf file.
+
+- In each plot, include appropriate title and labels. Include the legend, if appropriate. Also, after each plot, write a short comment (one or two sentence) if you see something on the graph, i.e. if graph reveals or suggests something about the data. **Do not forget** to write these comments, even if you can't say much by looking at the graph (in that case, just say that the graph is not very useful, i.e. doesn't suggest anything).
+
+- Use base plot (this time), not `ggplot2`.
+
+\newpage
+
+1. Plot the scatter plot of height vs. weight (so, weight on $x$-axis) including all the (non-missing) data.
+
+2. Plot the histogram of hours of absences. Do not group by ID, just treat each absence as one observation.
+
+3. Plot the histogram of age of a person corresponding to each absence. Do not group by ID, just treat each absence as one observation.
+
+4. Plot the bar plot of hours by month. So, each month is represented by one bar, whose height is the total number of absent hours of that month.
+
+5. Plot the box plots of hours by social smoker variable. So, you will have two box plots in one figure. Use the legend, labels, title. Play with colors.
+
+6. Plot the box plots of hours by social drinker variable. So, you will have two box plots in one figure. Use the legend, labels, title. Play with colors.
+
+
+When you are done, before submitting, go over the instructions again and for each plot make sure you met all the requirements.
+
+
